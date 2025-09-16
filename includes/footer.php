@@ -9,7 +9,7 @@
         </script>
         , made with ❤️ by <a href="https://pixinvent.com" target="_blank" class="footer-link">Pixinvent</a>
       </div>
-      <div class="d-none d-lg-inline-block">
+      <!-- <div class="d-none d-lg-inline-block">
         
           <a href="https://themeforest.net/licenses/standard" class="footer-link me-4" target="_blank">License</a>
           <a href="https://themeforest.net/user/pixinvent/portfolio" target="_blank" class="footer-link me-4">More Themes</a>
@@ -19,7 +19,7 @@
         
           <a href="https://pixinvent.ticksy.com/" target="_blank" class="footer-link d-none d-sm-inline-block">Support</a>
         
-      </div>
+      </div> -->
     </div>
   </div>
 </footer>
@@ -44,14 +44,6 @@
     
   </div>
   <!-- / Layout wrapper -->
-
-    
-      <div class="buy-now">
-        <a href="https://themeforest.net/item/vuexy-vuejs-html-laravel-admin-dashboard-template/23328599" target="_blank" class="btn btn-danger btn-buy-now">Buy Now</a>
-      </div>
-    
-
-    
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/theme.js  -->

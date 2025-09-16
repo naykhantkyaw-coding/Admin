@@ -78,7 +78,7 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     
       <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
-      <script src="assets/vendor/js/template-customizer.js"></script>
+      <!-- <script src="assets/vendor/js/template-customizer.js"></script> -->
     
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     
@@ -98,10 +98,10 @@
     <?php include('sidebar.php') ?>
 
     <div class="menu-mobile-toggler d-xl-none rounded-1">
-  <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large text-bg-secondary p-2 rounded-1">
+  <!-- <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large text-bg-secondary p-2 rounded-1">
     <i class="ti tabler-menu icon-base"></i>
     <i class="ti tabler-chevron-right icon-base"></i>
-  </a>
+  </a> -->
 </div>
 
 <div class="layout-page">
