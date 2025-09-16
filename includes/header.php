@@ -56,6 +56,7 @@
     
     <link rel="stylesheet" href="assets/vendor/css/core.css" />
     <link rel="stylesheet" href="assets/css/demo.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
 
     
     <!-- Vendors CSS -->
@@ -92,7 +93,7 @@
     
   
   <!-- Layout wrapper -->
-<div class="layout-wrapper layout-content-navbar  ">
+<div class="layout-wrapper layout-content-navbar backbodycolor  ">
   <div class="layout-container">
 
     <?php include('sidebar.php') ?>
