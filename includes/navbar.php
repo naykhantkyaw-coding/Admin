@@ -30,7 +30,7 @@
   <ul class="navbar-nav flex-row align-items-center ms-md-auto">
       
         <!-- Style Switcher -->
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle hide-arrow btn btn-icon btn-text-secondary rounded-pill" id="nav-theme" href="javascript:void(0);" data-bs-toggle="dropdown">
             <i class="icon-base ti tabler-sun icon-22px theme-icon-active text-heading"></i>
             <span class="d-none ms-2" id="nav-theme-text">Toggle theme</span>
@@ -52,7 +52,7 @@
               </button>
             </li>
           </ul>
-        </li>
+        </li> -->
         <!-- / Style Switcher-->
 
       <!-- User -->
@@ -84,7 +84,7 @@
           <li>
             <a class="dropdown-item" href="pages-profile-user.html"> <i class="icon-base ti tabler-user me-3 icon-md"></i><span class="align-middle">My Profile</span> </a>
           </li>
-          <li>
+          <!-- <li>
             <a class="dropdown-item" href="pages-account-settings-account.html"> <i class="icon-base ti tabler-settings me-3 icon-md"></i><span class="align-middle">Settings</span> </a>
           </li>
           <li>
@@ -103,7 +103,7 @@
           </li>
           <li>
             <a class="dropdown-item" href="pages-faq.html"> <i class="icon-base ti tabler-question-mark me-3 icon-md"></i><span class="align-middle">FAQ</span> </a>
-          </li>
+          </li> -->
           <li>
             <div class="d-grid px-2 pt-2 pb-1">
               <a class="btn btn-sm btn-danger d-flex" href="auth-login-cover.html" target="_blank">
