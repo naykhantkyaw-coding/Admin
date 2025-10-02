@@ -26,12 +26,12 @@
     <ul class="menu-inner py-1 backcolor">
 
       <!-- User Management -->
-      <li class="menu-item active open">
+      <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
           <i class="menu-icon icon-base ti tabler-smart-home textcolor"></i>
           <div data-i18n="User Management" class="textcolor">User Management</div>
         </a>
-        <ul class="menu-sub">
+        <!-- <ul class="menu-sub">
           <li class="menu-item active">
             <a href="index.html" class="menu-link">
               <div data-i18n="Analytics">Analytics</div>
@@ -57,7 +57,7 @@
               <div data-i18n="Academy">Academy</div>
             </a>
           </li>
-        </ul>
+        </ul> -->
       </li>
 
       <!-- Movie Management -->
@@ -67,7 +67,7 @@
           <div data-i18n="Movie Management" class="textcolor">Movie Management</div>
         </a>
 
-        <ul class="menu-sub">
+        <!-- <ul class="menu-sub">
           <li class="menu-item">
             <a href="layouts-collapsed-menu.html" class="menu-link">
               <div data-i18n="Collapsed menu">Collapsed menu</div>
@@ -113,7 +113,7 @@
               <div data-i18n="Blank">Blank</div>
             </a>
           </li>
-        </ul>
+        </ul> -->
       </li>
 
       <!-- Ticket Fees Management -->
@@ -122,7 +122,7 @@
           <i class="menu-icon icon-base ti tabler-files textcolor"></i>
           <div data-i18n="Ticket Fees Management" class="textcolor">Ticket Fees Management</div>
         </a>
-        <ul class="menu-sub">
+        <!-- <ul class="menu-sub">
           <li class="menu-item">
             <a href="../front-pages/landing-page.html" class="menu-link" target="_blank">
               <div data-i18n="Landing">Landing</div>
@@ -148,7 +148,7 @@
               <div data-i18n="Help Center">Help Center</div>
             </a>
           </li>
-        </ul>
+        </ul> -->
       </li>
 
        <!-- Booking Management -->
@@ -157,7 +157,7 @@
           <i class="menu-icon icon-base ti tabler-files textcolor"></i>
           <div data-i18n="Booking Management" class="textcolor">Booking Management</div>
         </a>
-        <ul class="menu-sub">
+        <!-- <ul class="menu-sub">
           <li class="menu-item">
             <a href="../front-pages/landing-page.html" class="menu-link" target="_blank">
               <div data-i18n="Landing">Landing</div>
@@ -183,7 +183,7 @@
               <div data-i18n="Help Center">Help Center</div>
             </a>
           </li>
-        </ul>
+        </ul> -->
       </li>
 
       

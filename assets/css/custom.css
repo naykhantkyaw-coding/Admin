@@ -1,11 +1,15 @@
 .textcolor{
-    color: #C5A880 !important; 
+    color: #FFFBF0 !important; 
+}
+
+.bodytextcolor{
+     color: #53161D !important; 
 }
 
 .backcolor{
-    background-color: #730000 !important; 
+    background-color: #53161D !important; 
 }
 
 .backbodycolor{
-     background-color:  #C5A880 !important; 
+     background-color:  #FFFBF0 !important; 
 }
