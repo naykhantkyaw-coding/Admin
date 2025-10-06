@@ -1,7 +1,7 @@
 <?php 
 include('includes/config.php'); 
 
-$stmt = $pdo->query("SELECT * FROM Tbl_Users");
+$stmt = $pdo->query("SELECT * from Tbl_Users ORDER BY UserId DESC");
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 // Get user data for editing if user_id is provided
