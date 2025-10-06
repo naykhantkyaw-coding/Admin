@@ -42,7 +42,7 @@
 
       <!-- Ticket Fees Management -->
       <li class="menu-item">
-        <a href="ticketmanagement.php" class="menu-link">
+        <a href="ticketfeesmanagement.php" class="menu-link">
           <i class="menu-icon icon-base ti tabler-files textcolor"></i>
           <div data-i18n="Ticket Fees Management" class="textcolor">Ticket Fees Management</div>
         </a>
