@@ -22,34 +22,6 @@
   </div>
 
   <div class="menu-inner-shadow"></div>
-    <!-- <ul class="menu-sub">
-          <li class="menu-item active">
-            <a href="index.html" class="menu-link">
-              <div data-i18n="Analytics">Analytics</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="dashboards-crm.html" class="menu-link">
-              <div data-i18n="CRM">CRM</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="app-ecommerce-dashboard.html" class="menu-link">
-              <div data-i18n="eCommerce">eCommerce</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="app-logistics-dashboard.html" class="menu-link">
-              <div data-i18n="Logistics">Logistics</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="app-academy-dashboard.html" class="menu-link">
-              <div data-i18n="Academy">Academy</div>
-            </a>
-          </li>
-        </ul> -->
-
     <ul class="menu-inner py-1 backcolor">
 
       <!-- User Management -->
@@ -62,7 +34,7 @@
 
       <!-- Movie Management -->
       <li class="menu-item ">
-        <a href="javascript:void(0);" class="menu-link">
+        <a href="moviemanagement.php" class="menu-link">
           <i class="menu-icon icon-base ti tabler-layout-sidebar textcolor"></i>
           <div data-i18n="Movie Management" class="textcolor">Movie Management</div>
         </a>
@@ -70,7 +42,7 @@
 
       <!-- Ticket Fees Management -->
       <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link">
+        <a href="ticketmanagement.php" class="menu-link">
           <i class="menu-icon icon-base ti tabler-files textcolor"></i>
           <div data-i18n="Ticket Fees Management" class="textcolor">Ticket Fees Management</div>
         </a>
@@ -78,7 +50,7 @@
 
        <!-- Booking Management -->
       <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link">
+        <a href="bookingmanagement.php" class="menu-link">
           <i class="menu-icon icon-base ti tabler-files textcolor"></i>
           <div data-i18n="Booking Management" class="textcolor">Booking Management</div>
         </a>

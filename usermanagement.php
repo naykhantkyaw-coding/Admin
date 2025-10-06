@@ -113,7 +113,7 @@ include('includes/header.php');
                                     <i class="icon-base ti tabler-dots-vertical"></i>
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="?edit_id=<?= $user['UserId'] ?>">
+                                    <a class="dropdown-item text-warning" href="?edit_id=<?= $user['UserId'] ?>">
                                         <i class="icon-base ti tabler-pencil me-1"></i> Edit
                                     </a>
                                     <a class="dropdown-item text-danger delete-user" href="javascript:void(0);" 
