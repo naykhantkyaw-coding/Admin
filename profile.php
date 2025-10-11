@@ -1,5 +1,4 @@
 <?php
-session_start();
 include('includes/config.php');
 include('includes/auth.php');
 
@@ -155,7 +154,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                         <div class="input-group input-group-merge">
                                             <span class="input-group-text"><i class="icon-base ti tabler-user-shield"></i></span>
                                             <input type="text" class="form-control" value="<?= htmlspecialchars($user['Role']) ?>" readonly />
-                                            <small class="form-text text-muted">Role cannot be changed</small>
+                                            <!-- <small class="form-text text-muted">Role cannot be changed</small> -->
                                         </div>
                                     </div>
                                 </div>
