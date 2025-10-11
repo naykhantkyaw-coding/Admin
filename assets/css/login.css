@@ -1,0 +1,48 @@
+body {
+  background: #FFFBF0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.auth-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  max-width: 900px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.form-section {
+  background: #FFFBF0;
+  color: #53161D;
+  padding: 40px;
+}
+
+.welcome-section {
+  background: #53161D;
+  color: #FFFBF0;
+  padding: 40px;
+  text-align: center;
+}
+
+.btn-custom {
+  background: #53161D;
+  color: #FFFBF0;
+  border-radius: 25px;
+  transition: background 0.3s ease;
+}
+
+.btn-custom:hover {
+  background: #3d1016;
+}
+
+.form-control {
+  border-radius: 25px;
+  padding: 10px 20px;
+}
+
+.extra-text a {
+  color: #53161D;
+  font-weight: bold;
+  text-decoration: none;
+}
