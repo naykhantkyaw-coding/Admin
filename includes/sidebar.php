@@ -24,10 +24,18 @@
   <div class="menu-inner-shadow"></div>
     <ul class="menu-inner py-1 backcolor">
 
+     <!-- Dashboard -->
+      <li class="menu-item">
+        <a href="dashboard.php" class="menu-link">
+          <i class="menu-icon icon-base ti tabler-smart-home textcolor"></i>
+          <div data-i18n="Dashboard" class="textcolor">Dashboard</div>
+        </a>
+      </li>
+
       <!-- User Management -->
       <li class="menu-item">
         <a href="usermanagement.php" class="menu-link">
-          <i class="menu-icon icon-base ti tabler-smart-home textcolor"></i>
+          <i class="menu-icon icon-base ti tabler-users textcolor"></i>
           <div data-i18n="User Management" class="textcolor">User Management</div>
         </a>
       </li>
@@ -35,7 +43,7 @@
       <!-- Movie Management -->
       <li class="menu-item ">
         <a href="moviemanagement.php" class="menu-link">
-          <i class="menu-icon icon-base ti tabler-layout-sidebar textcolor"></i>
+          <i class="menu-icon icon-base ti tabler-movie textcolor"></i>
           <div data-i18n="Movie Management" class="textcolor">Movie Management</div>
         </a>
       </li>
@@ -43,7 +51,7 @@
       <!-- Ticket Fees Management -->
       <li class="menu-item">
         <a href="ticketfeesmanagement.php" class="menu-link">
-          <i class="menu-icon icon-base ti tabler-files textcolor"></i>
+          <i class="menu-icon icon-base ti tabler-ticket textcolor"></i>
           <div data-i18n="Ticket Fees Management" class="textcolor">Ticket Fees Management</div>
         </a>
       </li>
@@ -51,11 +59,9 @@
        <!-- Booking Management -->
       <li class="menu-item">
         <a href="bookingmanagement.php" class="menu-link">
-          <i class="menu-icon icon-base ti tabler-files textcolor"></i>
+          <i class="menu-icon icon-base ti tabler-clipboard-check textcolor"></i>
           <div data-i18n="Booking Management" class="textcolor">Booking Management</div>
         </a>
       </li>
-
-      
     </ul>
 </aside>

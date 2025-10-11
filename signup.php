@@ -1,3 +1,6 @@
+<?php
+include('includes/config.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,20 +22,47 @@
       <!-- Right: Form -->
       <div class="col-md-6 form-section">
         <h2 class="text-center mb-4">Sign Up</h2>
-        <form id="signupForm" onsubmit="return validateSignup(event)">
-          <input type="text" name="full_name" class="form-control mb-3" placeholder="Full Name" required />
-          <input type="email" name="email" class="form-control mb-3" placeholder="Email" required />
+        
+        <!-- Error Message Display -->
+        <?php if (isset($_SESSION['error_message'])): ?>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <?= $_SESSION['error_message'] ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <?php unset($_SESSION['error_message']); ?>
+        <?php endif; ?>
 
-          <!-- ✅ Updated Phone Field -->
-          <input type="tel" name="phone" id="phone" class="form-control mb-3"
-                 placeholder="Phone Number"
-                 pattern="^09\d{7,9}$"
-                 title="Phone number must start with 09 and be 9–11 digits long"
-                 required />
+        <?php if (isset($_SESSION['success_message'])): ?>
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <?= $_SESSION['success_message'] ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <?php unset($_SESSION['success_message']); ?>
+        <?php endif; ?>
 
-          <input type="text" name="username" class="form-control mb-3" placeholder="Username" required />
-          <input type="password" name="password" id="password" class="form-control mb-3" placeholder="Password" required />
-          <input type="password" id="confirmPassword" class="form-control mb-3" placeholder="Confirm Password" required />
+        <form method="POST" action="signupprocess.php">
+          <div class="mb-3">
+            <input type="text" name="full_name" class="form-control" placeholder="Full Name" required />
+          </div>
+          <div class="mb-3">
+            <input type="email" name="email" class="form-control" placeholder="Email" required />
+          </div>
+          <div class="mb-3">
+            <input type="tel" name="phone" id="phone" class="form-control"
+                   placeholder="Phone Number"
+                   pattern="^09\d{7,9}$"
+                   title="Phone number must start with 09 and be 9–11 digits long"
+                   required />
+          </div>
+          <div class="mb-3">
+            <input type="text" name="username" class="form-control" placeholder="Username" required />
+          </div>
+          <div class="mb-3">
+            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required />
+          </div>
+          <div class="mb-3">
+            <input type="password" name="confirm_password" id="confirmPassword" class="form-control" placeholder="Confirm Password" required />
+          </div>
           <button type="submit" class="btn btn-custom w-100">Sign Up</button>
         </form>
         <div class="extra-text mt-3 text-center">
@@ -42,31 +72,38 @@
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-  function validateSignup(event) {
-    event.preventDefault(); // Prevent normal form submission
-
+  // Client-side validation
+  document.getElementById('signupForm').addEventListener('submit', function(event) {
     const password = document.getElementById("password").value.trim();
     const confirmPassword = document.getElementById("confirmPassword").value.trim();
     const phone = document.getElementById("phone").value.trim();
 
     // Password check
     if (password !== confirmPassword) {
+      event.preventDefault();
       alert("Passwords do not match!");
       return false;
     }
 
-    // Phone format check (must start with 09 and be 9–11 digits)
+    // Phone format check
     const phonePattern = /^09\d{7,9}$/;
     if (!phonePattern.test(phone)) {
+      event.preventDefault();
       alert("Please enter a valid phone number that starts with 09 and is 9–11 digits long.");
       return false;
     }
 
-    alert("Account created successfully!");
-    window.location.href = "login.php"; // Redirect to login
+    // Password length check
+    if (password.length < 6) {
+      event.preventDefault();
+      alert("Password must be at least 6 characters long.");
+      return false;
+    }
+
     return true;
-  }
+  });
   </script>
 </body>
 </html>

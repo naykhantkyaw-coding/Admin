@@ -24,9 +24,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 header("Location: login.php");
                 exit();
             }
-            //password_verify($password, $user['Password'])
+           
             // Verify password
-            if ($password == $user['Password']) {
+            if (password_verify($password, $user['Password'])) {
                 // Set session variables
                 $_SESSION['user_id'] = $user['UserId'];
                 $_SESSION['username'] = $user['UserName'];
