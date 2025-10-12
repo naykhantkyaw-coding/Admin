@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Validate inputs
     if (empty($username) || empty($password)) {
         $_SESSION['error_message'] = "Please enter both username and password.";
-        header("Location: login.php");
+        header("Location: index.php");
         exit();
     }
 
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Check if user is approved
             if ($user['Status'] !== 'Approved') {
                 $_SESSION['error_message'] = "Your account is pending approval. Please contact administrator.";
-                header("Location: login.php");
+                header("Location: index.php");
                 exit();
             }
            
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 if ($user['Role'] === 'Admin') {
                     header("Location: dashboard.php");
                 } else {
-                    header("Location: ../Movies/home.php");
+                    header("Location: home.php");
                 }
                 exit();
             } else {
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 } else {
     // If not POST request, redirect to login
-    header("Location: login.php");
+    header("Location: index.php");
     exit();
 }
 ?>

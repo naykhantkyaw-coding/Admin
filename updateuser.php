@@ -1,5 +1,4 @@
 <?php
-session_start();
 include('includes/config.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -24,17 +23,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         
         $_SESSION['success_message'] = 'User updated successfully';
-        header('Location: index.php');
+        header('Location: usermanagement.php');
         exit();
         
     } catch(PDOException $e) {
         $_SESSION['error_message'] = 'Database error: ' . $e->getMessage();
-        header('Location: index.php?edit_id=' . $user_id);
+        header('Location: usermanagement.php?edit_id=' . $user_id);
         exit();
     }
 } else {
     $_SESSION['error_message'] = 'Invalid request method';
-    header('Location: index.php');
+    header('Location: usermanagement.php');
     exit();
 }
 ?>
