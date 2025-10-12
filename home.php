@@ -48,7 +48,7 @@ include('includes/config.php');
           <?php endif; ?>
           
           <!-- Check Booking Button -->
-          <a href="check-booking.php" class="btn btn-outline-light me-2">
+          <a href="checkbooking.php" class="btn btn-outline-light me-2">
             <i class="fas fa-ticket-alt me-1"></i>Check Booking
           </a>
           

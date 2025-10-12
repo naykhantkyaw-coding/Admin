@@ -78,7 +78,7 @@ if (isset($_GET['id'])) {
                 <?php endif; ?>
                 
                 <!-- Check Booking Button -->
-                <a href="check-booking.php" class="btn btn-outline-light me-2">
+                <a href="checkbooking.php" class="btn btn-outline-light me-2">
                     <i class="fas fa-ticket-alt me-1"></i>Check Booking
                 </a>
                 
@@ -259,14 +259,6 @@ if (isset($_GET['id'])) {
                     <span>Selected Seats:</span>
                     <span id="summarySeats"></span>
                 </div>
-                <!-- <div class="summary-item">
-                    <span>Ticket Class:</span>
-                    <span id="summaryClass"></span>
-                </div>
-                <div class="summary-item">
-                    <span>Price per Ticket:</span>
-                    <span id="summaryPricePerTicket"></span>
-                </div> -->
                 <div class="summary-item">
                     <span>Number of Tickets:</span>
                     <span id="summaryQuantity"></span>
@@ -325,12 +317,12 @@ function initializeSeatLayout() {
     display.innerHTML = ''; // Clear existing content
     
     const rows = [
-        { type: 'standard', label: 'S', count: 10 },
-        { type: 'standard', label: 'S', count: 10 },
-        { type: 'premium', label: 'P', count: 8 },
-        { type: 'premium', label: 'P', count: 8 },
-        { type: 'vip', label: 'V', count: 6 },
-        { type: 'vip', label: 'V', count: 6 }
+        { type: 'standard', label: 'S1', count: 10 },
+        { type: 'standard', label: 'S2', count: 10 },
+        { type: 'premium', label: 'P1', count: 8 },
+        { type: 'premium', label: 'P2', count: 8 },
+        { type: 'vip', label: 'V1', count: 6 },
+        { type: 'vip', label: 'V2', count: 6 }
     ];
     
     rows.forEach(rowConfig => {

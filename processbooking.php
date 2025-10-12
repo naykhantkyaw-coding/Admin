@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$user_id, $movie_id, $ticket_class, $selected_seats, $quantity, $total_price]);
         
         $_SESSION['success_message'] = 'Booking confirmed successfully! Your seat numbers: ' . $selected_seats;
-        header('Location: check-booking.php');
+        header('Location: checkbooking.php');
         exit();
         
     } catch(Exception $e) {

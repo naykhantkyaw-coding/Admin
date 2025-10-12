@@ -3,7 +3,7 @@
       max-width: 1000px;
       margin: 0 auto;
       padding: 20px;
-      background: white;
+      background: #FFFBF0 !important;
       border-radius: 8px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
@@ -93,7 +93,7 @@
     /* Additional styles for booking process */
     .booking-process {
         margin-top: 40px;
-        background: white;
+        background: #FFFBF0 !important;
         border-radius: 8px;
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         overflow: hidden;
@@ -101,7 +101,7 @@
     
     .booking-steps {
         display: flex;
-        background: #f8f9fa;
+        background: #FFFBF0 !important;
         border-bottom: 1px solid #dee2e6;
     }
     

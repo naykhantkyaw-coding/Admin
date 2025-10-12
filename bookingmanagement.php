@@ -200,7 +200,7 @@ include('includes/header.php');
                                     <label class="form-label" for="ticket_class">Ticket Class</label>
                                     <div class="input-group input-group-merge">
                                         <span class="input-group-text"><i class="icon-base ti tabler-ticket"></i></span>
-                                          <input type="text" id="movie_title" class="form-control" 
+                                          <input type="text" id="ticket_class" name="ticket_class" class="form-control" 
                                                value="<?= htmlspecialchars($edit_booking['TicketClass'] ?? 'N/A') ?>" readonly />
                                     </div>
                                 </div>
