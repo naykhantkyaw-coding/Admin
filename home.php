@@ -147,7 +147,7 @@ include('includes/config.php');
             $countdown_text = "In $days_until days";
           }
       ?>
-      <a class="movie-card" href="movie-details.php?id=<?= $movie['MovieId'] ?>">
+      <a class="movie-card" href="moviedetail.php?id=<?= $movie['MovieId'] ?>">
         <div class="movie-image">
           <img src="<?= $movie_image ?>" alt="<?= htmlspecialchars($movie['MovieTitle']) ?>">
           <div class="upcoming-badge">Coming Soon</div>
