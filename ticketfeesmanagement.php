@@ -164,7 +164,8 @@ include('includes/header.php');
                                     <label class="form-label" for="movie_id">Movie *</label>
                                     <div class="input-group input-group-merge">
                                         <span class="input-group-text"><i class="icon-base ti tabler-movie"></i></span>
-                                        <select class="form-select" id="movie_id" name="movie_id" required>
+                                        <select class="form-select" id="movie_id" name="movie_id" 
+                                            <?= ($edit_ticket_fee && !isset($_GET['add_new'])) ? 'readonly disabled' : '' ?> required>
                                             <option value="">Select Movie</option>
                                             <?php foreach ($movies as $movie): ?>
                                             <option value="<?= $movie['MovieId'] ?>" 
@@ -174,6 +175,12 @@ include('includes/header.php');
                                             <?php endforeach; ?>
                                         </select>
                                     </div>
+                                    <?php if ($edit_ticket_fee && !isset($_GET['add_new'])): ?>
+                                    <div class="form-text text-warning">
+                                        <i class="icon-base ti tabler-info-circle me-1"></i>
+                                        Movie cannot be changed when editing ticket fee
+                                    </div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                             <div class="col-md-6">
