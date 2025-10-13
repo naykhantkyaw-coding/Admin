@@ -18,7 +18,7 @@ include('includes/config.php');
   <nav class="navbar navbar-expand-lg navbar-custom">
     <div class="container">
       <a class="navbar-brand" href="home.php">
-        <i class="fas fa-film me-2"></i>MovieHub
+        <i class="fas fa-film me-2"></i>CineVista
       </a>
       
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">

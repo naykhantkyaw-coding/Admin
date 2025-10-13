@@ -1,7 +1,7 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu" >
   
   <div class="app-brand demo backcolor">
-    <a href="index.html" class="app-brand-link">
+    <a href="dashboard.php" class="app-brand-link">
       <span class="app-brand-logo demo">
   <span class="text-primary">
     <svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -12,7 +12,7 @@
     </svg>
   </span>
 </span>
-      <span class="app-brand-text demo menu-text fw-bold ms-3 textcolor">Vuexy</span>
+      <span class="app-brand-text demo menu-text fw-bold ms-3 textcolor">CineVista</span>
     </a>
 
     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto">
