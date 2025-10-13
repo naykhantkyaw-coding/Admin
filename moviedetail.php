@@ -233,8 +233,6 @@ if (isset($_GET['id'])) {
             
             <div class="selected-info mt-4">
                 <p><strong>Selected Seats:</strong> <span id="step2SelectedSeats">None</span></p>
-                <!-- <p><strong>Selected Class:</strong> <span id="selectedClass">None</span></p>
-                <p><strong>Price per Ticket:</strong> $<span id="pricePerTicket">0.00</span></p> -->
                 <p><strong>Number of Tickets:</strong> <span id="step2Quantity">0</span></p>
                 <p><strong>Total Price:</strong> $<span id="step2TotalPrice">0.00</span></p>
             </div>
@@ -299,7 +297,6 @@ if (isset($_GET['id'])) {
 
 <!-- Bootstrap JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 <script>
 // Booking process variables
 let selectedSeats = [];
@@ -415,7 +412,29 @@ function initializeSeatSelection() {
         });
     });
     
-    // Initialize seat selection
+    // Restore any previously selected seats
+    restoreSeatSelection();
+}
+
+// Restore seat selection in dropdowns
+function restoreSeatSelection() {
+    const selects = document.querySelectorAll('.seat-select');
+    
+    // Clear all selections first
+    selects.forEach(select => {
+        select.value = '';
+    });
+    
+    // Restore selected seats
+    selectedSeats.forEach(seat => {
+        const row = seat.substring(0, 2); // Get row (S1, P1, V1, etc.)
+        const select = document.querySelector(`select[data-row="${row}"]`);
+        if (select) {
+            select.value = seat;
+        }
+    });
+    
+    // Update the display
     updateSeatSelection();
 }
 
@@ -520,12 +539,14 @@ function updatePriceCalculation(totalPrice) {
     
     // Enable/disable next button
     const nextButton = document.getElementById('nextToStep3');
-    if (quantity > 0) {
+   
+    if (totalPrice > 0) {
         nextButton.disabled = false;
         console.log('Next button enabled');
-    } else {
+    }
+    else {
         nextButton.disabled = true;
-        console.log('Next button disabled - Quantity:', quantity);
+        console.log('Next button disabled - TotalPrice:', totalPrice);
     }
     
     // Update form fields for booking
@@ -582,37 +603,46 @@ function initializeTicketClasses() {
         ticket.style.transition = 'none';
     });
     
-    // Add price information display
+    // Add price information display - Check if it already exists
     const ticketSection = document.querySelector('.ticket-classes');
-    const priceInfo = document.createElement('div');
-    priceInfo.className = 'col-12';
-    priceInfo.innerHTML = `
-        <div class="alert alert-info mt-3">
-            <h6><i class="fas fa-info-circle me-2"></i>Pricing Information</h6>
-            <div class="row mt-2">
-                <div class="col-md-4">
-                    <strong>Standard Seats:</strong> $${(seatPriceMapping['Standard'] || 0).toFixed(2)}
-                </div>
-                <div class="col-md-4">
-                    <strong>Premium Seats:</strong> $${(seatPriceMapping['Premium'] || 0).toFixed(2)}
-                </div>
-                <div class="col-md-4">
-                    <strong>VIP Seats:</strong> $${(seatPriceMapping['VIP'] || 0).toFixed(2)}
-                </div>
-            </div>
-            <div class="mt-2">
-                <small>Total price is calculated based on individual seat prices.</small>
-            </div>
-        </div>
-    `;
-    ticketSection.parentNode.insertBefore(priceInfo, ticketSection.nextSibling);
+    let priceInfo = document.getElementById('priceInformation');
+    let breakdownContainer = document.getElementById('seatBreakdown');
     
-    // Add seat breakdown container
-    const breakdownContainer = document.createElement('div');
-    breakdownContainer.id = 'seatBreakdown';
-    breakdownContainer.className = 'seat-breakdown mt-3';
-    breakdownContainer.style.display = 'none';
-    priceInfo.parentNode.insertBefore(breakdownContainer, priceInfo.nextSibling);
+    // Create price info if it doesn't exist
+    if (!priceInfo) {
+        priceInfo = document.createElement('div');
+        priceInfo.id = 'priceInformation';
+        priceInfo.className = 'col-12';
+        priceInfo.innerHTML = `
+            <div class="alert alert-info mt-3">
+                <h6><i class="fas fa-info-circle me-2"></i>Pricing Information</h6>
+                <div class="row mt-2">
+                    <div class="col-md-4">
+                        <strong>Standard Seats:</strong> $${(seatPriceMapping['Standard'] || 0).toFixed(2)}
+                    </div>
+                    <div class="col-md-4">
+                        <strong>Premium Seats:</strong> $${(seatPriceMapping['Premium'] || 0).toFixed(2)}
+                    </div>
+                    <div class="col-md-4">
+                        <strong>VIP Seats:</strong> $${(seatPriceMapping['VIP'] || 0).toFixed(2)}
+                    </div>
+                </div>
+                <div class="mt-2">
+                    <small>Total price is calculated based on individual seat prices.</small>
+                </div>
+            </div>
+        `;
+        ticketSection.parentNode.insertBefore(priceInfo, ticketSection.nextSibling);
+    }
+    
+    // Create seat breakdown container if it doesn't exist
+    if (!breakdownContainer) {
+        breakdownContainer = document.createElement('div');
+        breakdownContainer.id = 'seatBreakdown';
+        breakdownContainer.className = 'seat-breakdown mt-3';
+        breakdownContainer.style.display = 'none';
+        priceInfo.parentNode.insertBefore(breakdownContainer, priceInfo.nextSibling);
+    }
 }
 
 // Step navigation
@@ -659,7 +689,14 @@ function nextStep(step) {
     if (step === 1) {
         initializeSeatLayout();
     } else if (step === 2) {
-        initializeSeatSelection();
+        // Check if seat selection is already initialized
+        const firstSelect = document.querySelector('.seat-select');
+        if (!firstSelect || firstSelect.options.length === 0) {
+            initializeSeatSelection();
+        } else {
+            // Just restore the selections without reinitializing
+            restoreSeatSelection();
+        }
         initializeTicketClasses();
     } else if (step === 3) {
         updateBookingSummary();
@@ -667,6 +704,8 @@ function nextStep(step) {
 }
 
 function prevStep(step) {
+    // When going back, preserve the current selected seats
+    console.log('Going back to step:', step, 'Current selected seats:', selectedSeats);
     nextStep(step);
 }
 
@@ -732,5 +771,6 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Page loaded successfully');
 });
 </script>
+
 </body>
 </html>
