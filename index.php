@@ -45,7 +45,7 @@ include('includes/config.php');
         </form>
         <div class="extra-text mt-3 text-center">
           <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
-          <p><a href="forgot_password.php">Forgot Password?</a></p>
+          <!-- <p><a href="forgot_password.php">Forgot Password?</a></p> -->
         </div>
       </div>
 
