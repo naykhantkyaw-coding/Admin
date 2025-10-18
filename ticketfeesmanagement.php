@@ -164,16 +164,23 @@ include('includes/header.php');
                                     <label class="form-label" for="movie_id">Movie *</label>
                                     <div class="input-group input-group-merge">
                                         <span class="input-group-text"><i class="icon-base ti tabler-movie"></i></span>
-                                        <select class="form-select" id="movie_id" name="movie_id" 
-                                            <?= ($edit_ticket_fee && !isset($_GET['add_new'])) ? 'readonly disabled' : '' ?> required>
-                                            <option value="">Select Movie</option>
-                                            <?php foreach ($movies as $movie): ?>
-                                            <option value="<?= $movie['MovieId'] ?>" 
-                                                <?= ($edit_ticket_fee && $edit_ticket_fee['MovieId'] == $movie['MovieId']) ? 'selected' : '' ?>>
-                                                <?= htmlspecialchars($movie['MovieTitle']) ?>
-                                            </option>
-                                            <?php endforeach; ?>
-                                        </select>
+                                        <?php if ($edit_ticket_fee && !isset($_GET['add_new'])): ?>
+                                            <!-- Display as readonly input but still submit the value -->
+                                            <input type="hidden" name="movie_id" value="<?= $edit_ticket_fee['MovieId'] ?>">
+                                            <input type="text" class="form-control" 
+                                                   value="<?= htmlspecialchars($edit_ticket_fee['MovieTitle'] ?? 'N/A') ?>" 
+                                                   readonly>
+                                        <?php else: ?>
+                                            <select class="form-select" id="movie_id" name="movie_id" required>
+                                                <option value="">Select Movie</option>
+                                                <?php foreach ($movies as $movie): ?>
+                                                <option value="<?= $movie['MovieId'] ?>" 
+                                                    <?= ($edit_ticket_fee && $edit_ticket_fee['MovieId'] == $movie['MovieId']) ? 'selected' : '' ?>>
+                                                    <?= htmlspecialchars($movie['MovieTitle']) ?>
+                                                </option>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        <?php endif; ?>
                                     </div>
                                     <?php if ($edit_ticket_fee && !isset($_GET['add_new'])): ?>
                                     <div class="form-text text-warning">
